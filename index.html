@@ -35,9 +35,17 @@
     </script>
 
 	<div class="body">
-	        <h1>Vinlotteriet!</h1>
-		<label for="people">Skriv inn navn separerte med komma:</label><br/>
-		<input id="people-field" name="people" type="text"></input>
+		<h1>Vinlotteriet!</h1>
+		<div id="contestants">
+			<div id="contestant-1" class="contestant">
+				<input id="contestant-1-name" name="contestant-1-name" class="name" type="text" size="25" placeholder="Navn"></input>
+				<label for="contestant-1-tickets">Antall lodd</label>
+				<input id="contestant-1-tickets" name="contestant-1-tickets" class="tickets" type="number" value="1" size="4"></input>
+			</div>
+		</div>
+		<div>
+			<a id="add-contestant" href="#">+ Legg til</a>
+		</div>
 		<button id="roll-button">Trekk!</button>
 	</div>
 
