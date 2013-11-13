@@ -97,6 +97,15 @@ textarea {
     resize: vertical;
 }
 
+/*
+ * Remove margin on form divs, to fix alignment in firefox.
+ */
+.form-group {
+	margin-bottom: 0px;
+	vertical-align: bottom;
+}
+
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
@@ -112,15 +121,24 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+#contestants .contestant {
+	margin-bottom: 15px;
+}
+
+#contestants .glyphicon {
+	vertical-align: bottom;
+	line-height: 34px;
+}
+
 #contestants .name {
 	display:inline-block;
 	width:250px;
+	line-height: 34px;
+	vertical-align: bottom;
 }
 #contestants .form-group.tickets-group  {
 	display:inline-block;
 	width:85px;
-	position:relative;
-	top:1px;
 }
 
 
