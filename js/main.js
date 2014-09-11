@@ -14,14 +14,32 @@ $(document).ready(function() {
 		}
 
 		console.log(people);
-		
-		var winticket = Math.floor(Math.random() * people.length);
-		var winner = people[winticket];
-		people.splice(winticket,1);
 
 		if ( $('#winners').length == 0 )
 			$('.body').append('<ol id="winners"><h1>Vinnere</h1></ol>');
-		$('#winners').append('<li>'+winner.trim()+'</li>');
+		
+		$('#winners').append('<li class="latest-winner"></li>');
+
+		// No point in continuing if no more tickets are left
+		if (0<people.length) {
+			// Make the drawing more exiting by rolling through the contestants before selecting the real winner.
+			var rotatingNames = setInterval(function(){
+				anticipation = people[Math.floor(Math.random() * people.length)];
+				console.log(anticipation);
+				$('.latest-winner').html(anticipation);
+			}, 100);
+
+			// Select the actual winner
+			var winticket = Math.floor(Math.random() * people.length);
+			var winner = people[winticket];
+			people.splice(winticket,1);
+
+			setTimeout(function() {
+				clearInterval(rotatingNames);
+				$('.latest-winner').html(winner.trim());
+				$('.latest-winner').animate('highlight').removeClass('latest-winner');
+			}, 2000);
+		}
 	});
 	$('#add-contestant').click(function() {
 		var no = $('#contestants > .contestant').size() + 1;
