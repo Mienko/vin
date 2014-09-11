@@ -3,6 +3,8 @@ $(document).ready(function() {
 	var startedlottery = false;
 
 	$('#roll-button').click(function() {
+		$('#roll-button').prop('disabled', true); // Avoid selecting same winner twice on one ticket
+
 		if ( ! startedlottery ) {
 			$('#contestants > .contestant').each(function(){
 				for (var i=0 ; i<$(this).find('.tickets').val(); i++) {
@@ -25,7 +27,6 @@ $(document).ready(function() {
 			// Make the drawing more exiting by rolling through the contestants before selecting the real winner.
 			var rotatingNames = setInterval(function(){
 				anticipation = people[Math.floor(Math.random() * people.length)];
-				console.log(anticipation);
 				$('.latest-winner').html(anticipation);
 			}, 100);
 
@@ -38,8 +39,10 @@ $(document).ready(function() {
 				clearInterval(rotatingNames);
 				$('.latest-winner').html(winner.trim());
 				$('.latest-winner').animate('highlight').removeClass('latest-winner');
+				$('#roll-button').prop('disabled', false);
 			}, 2000);
 		}
+
 	});
 	$('#add-contestant').click(function() {
 		var no = $('#contestants > .contestant').size() + 1;
