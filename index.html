@@ -41,14 +41,15 @@
 				<i class="glyphicon glyphicon-user"></i> <input id="contestant-1-name" name="contestant-1-name" class="name form-control" type="text" size="25" placeholder="Navn"></input>
 				<div class="form-group tickets-group">
 					<label for="contestant-1-tickets">Antall lodd</label>
-					<input id="contestant-1-tickets" name="contestant-1-tickets" class="tickets form-control" type="number" value="1" size="4"></input>
+					<input id="contestant-1-tickets" name="contestant-1-tickets" class="tickets form-control" type="number" value="0" size="4"></input>
 				</div>
 			</div>
 		</div>
-		<div>
-			<a id="add-contestant" href="#"><i class="glyphicon glyphicon-plus-sign"></i> Legg til deltaker</a>
-		</div>
-		<button id="roll-button" class="btn btn-large btn-">Trekk!</button>
+		<div id="messages"></div>
+
+		<button id="add-contestant" class="btn btn-large btn-success" href="#"><i class="glyphicon glyphicon-plus-sign"></i> Legg til deltaker</button>
+		<button id="start-lottery" class="btn btn-large btn-danger">Start lotteriet</button>
+		<button id="roll-button" class="btn btn-large btn-" disabled>Trekk!</button>
 	</div>
 
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>

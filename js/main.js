@@ -6,14 +6,6 @@ $(document).ready(function() {
 		$('#roll-button').prop('disabled', true); // Avoid selecting same winner twice on one ticket
 
 		if ( ! startedlottery ) {
-			$('#contestants > .contestant').each(function(){
-				for (var i=0 ; i<$(this).find('.tickets').val(); i++) {
-					people.push($(this).children('.name').val());
-				}
-			});
-			$('#contestants').append('<p class="text-muted">Lotteriet er i gang. Du kan ikke lenger endre på loddene.</p>');
-			$('#add-contestant').remove();
-			startedlottery=true;
 		}
 
 		console.log(people);
@@ -45,13 +37,44 @@ $(document).ready(function() {
 		}
 
 	});
+
 	$('#add-contestant').click(function() {
+		// Only allow more contestants if every contestant has a name
+		var properform = true;
+		$('#contestants > .contestant .name').each(function(){
+			if ( '' == $(this).val() )
+				properform = false;
+		});
+		if (!properform) {
+			$('#messages').html('<p class="text-muted">Gi alle deltakerne et navn før du legger til flere.</p>');
+			return;
+		} else {
+			$('#messages').html('');
+		}
+
+		// Add another contestant field
 		var no = $('#contestants > .contestant').size() + 1;
 		$('#contestants').append('<div id="contestant-'+no+'" class="contestant"></div>');
 		$('#contestant-'+no).append('<i class="glyphicon glyphicon-user"></i> <input id="contestant-'+no+'-name" name="contestant-'+no+'-name" class="name form-control" type="text" size="25" placeholder="Navn"></input> ');
 		$('#contestant-'+no).append('<div class="form-group tickets-group"></div>');
 		//$('#contestant-'+no+' .tickets-group').append('<label for="contestant-'+no+'-tickets">Antall lodd</label> ');
-		$('#contestant-'+no+' .tickets-group').append('<input id="contestant-'+no+'-tickets" name="contestant-'+no+'-tickets" class="tickets form-control" type="number" value="1" size="4"></input>');
+		$('#contestant-'+no+' .tickets-group').append('<input id="contestant-'+no+'-tickets" name="contestant-'+no+'-tickets" class="tickets form-control" type="number" value="0" size="4"></input>');
 		$('#contestant-'+no+' .name').focus();
 	});
+
+	$('#start-lottery').click(function() {
+		$('#roll-button').show().addClass('btn-success').prop('disabled',false);
+		$('#start-lottery').hide();
+		$('#add-contestant').hide();
+		$('input.name, input.tickets').prop('disabled',true);
+
+		$('#contestants > .contestant').each(function(){
+			for (var i=0 ; i<$(this).find('.tickets').val(); i++) {
+				people.push($(this).children('.name').val());
+			}
+		});
+		$('#messages').html('<p class="text-muted">Det er klart for trekning, og du kan ikke lenger endre på loddene.</p>');
+		startedlottery=true;
+	});
+
 });

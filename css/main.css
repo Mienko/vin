@@ -143,7 +143,13 @@ textarea {
 
 
 
+#start-lottery {
+	margin-top:5em;
+}
 
+#roll-button {
+	display:none;
+}
 
 
 
