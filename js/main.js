@@ -12,6 +12,7 @@ $(document).ready(function() {
 				}
 			});
 			$('#contestants').append('<p class="text-muted">Lotteriet er i gang. Du kan ikke lenger endre på loddene.</p>');
+			$('#add-contestant').remove();
 			startedlottery=true;
 		}
 
