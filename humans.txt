@@ -4,10 +4,14 @@
 # TEAM
 
     <name> -- <role> -- <twitter>
+	 Robert Kolner -- developer -- robert_kolner
+	 Lars Jansøn Engvik -- developer -- mienkono
+	 Just Thomas Misund -- developer -- misund
 
 # THANKS
 
-    <name>
+    <name> -- <contribution>
+	 Marte Holm Løvstad -- testing and feedback
 
 # TECHNOLOGY COLOPHON
 
