@@ -1,10 +1,12 @@
 # [The Wine Lottery](http://vin.mienko.no/)
 
-The Wine Lottery is a miniscule web app suitable for picking random winners at your friday luncheons at work.
+The Wine Lottery is a miniscule web app suitable for picking random winners at your friday luncheons at work. The app is currently only available in Norwegian bokmål.
 
 * Source: [http://git.mienko.no/?p=vin.git](http://git.mienko.no/?p=vin.git;a=summary)
 * Homepage: [http://mienko.no/work/vin/](http://mienko.no/work/vin/)
 * Twitter: [@h5bp](http://twitter.com/mienkono)
+
+The templates are based on [https://github.com/h5bp/html5-boilerplate](HTML5 Boilerplate), used under the MIT licence.
 
 
 ## Quick start
@@ -23,3 +25,7 @@ Choose one of the following options:
 
 * Register sold lottery tickets
 * Pick random winners
+
+## Contributing
+
+Clone this project from [https://github.com/Mienko/vin/](GitHub). We love pull requests!
