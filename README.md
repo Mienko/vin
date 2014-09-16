@@ -6,8 +6,6 @@ The Wine Lottery is a miniscule web app suitable for picking random winners at y
 * Homepage: [http://mienko.no/work/vin/](http://mienko.no/work/vin/)
 * Twitter: [@h5bp](http://twitter.com/mienkono)
 
-The templates are based on [https://github.com/h5bp/html5-boilerplate](HTML5 Boilerplate), used under the MIT licence.
-
 
 ## Quick start
 
@@ -29,3 +27,8 @@ Choose one of the following options:
 ## Contributing
 
 Clone this project from [https://github.com/Mienko/vin/](GitHub). We love pull requests!
+
+## Licence
+This project is licenced under the GNU GPL version 2 or later.
+
+The templates are based on [https://github.com/h5bp/html5-boilerplate](HTML5 Boilerplate), used under the MIT licence.
